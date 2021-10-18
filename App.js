@@ -1,112 +1,97 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
+import React, {Component} from 'react';
+import {Image, StyleSheet, Text, View} from 'react-native';
+import iconHome from './icon/home.png';
+import iconHomeActive from './icon/home-active.png';
+import iconOrder from './icon/order.png';
+import iconHelp from './icon/help.png';
+import iconInbox from './icon/inbox.png';
+import iconAccount from './icon/account.png';
 
-import React from 'react';
-import type {Node} from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
-
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
-const Section = ({children, title}): Node => {
-  const isDarkMode = useColorScheme() === 'dark';
-  return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  );
-};
-
-const App: () => Node = () => {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
-  return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
+export default class App extends Component {
+  render() {
+    return (
+      <View style={{flex: 1}}>
+        <View style={{flex: 1, backgroundColor: 'pink'}}>
+          <Text>Clone Gojek App !</Text>
+        </View>
         <View
           style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
+            height: 54,
+            backgroundColor: 'white',
+            flexDirection: 'row',
           }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.js</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
+          <View
+            style={{
+              flex: 1,
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}>
+            <Image
+              style={{width: 26, height: 26}}
+              source={iconHomeActive}></Image>
+
+            <Text
+              style={{
+                fontSize: 10,
+                color: '#545454',
+                color: '#43AB4A',
+                marginTop: 4,
+              }}>
+              Home
+            </Text>
+          </View>
+          <View
+            style={{
+              flex: 1,
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}>
+            <Image style={{width: 26, height: 26}} source={iconOrder}></Image>
+
+            <Text style={{fontSize: 10, color: '#545454', marginTop: 4}}>
+              Order
+            </Text>
+          </View>
+          <View
+            style={{
+              flex: 1,
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}>
+            <Image style={{width: 26, height: 26}} source={iconHelp}></Image>
+
+            <Text style={{fontSize: 10, color: '#545454', marginTop: 4}}>
+              Help
+            </Text>
+          </View>
+          <View
+            style={{
+              flex: 1,
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}>
+            <Image style={{width: 26, height: 26}} source={iconInbox}></Image>
+
+            <Text style={{fontSize: 10, color: '#545454', marginTop: 4}}>
+              Inbox
+            </Text>
+          </View>
+          <View
+            style={{
+              flex: 1,
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}>
+            <Image style={{width: 26, height: 26}} source={iconAccount}></Image>
+
+            <Text style={{fontSize: 10, color: '#545454', marginTop: 4}}>
+              Account
+            </Text>
+          </View>
         </View>
-      </ScrollView>
-    </SafeAreaView>
-  );
-};
+      </View>
+    );
+  }
+}
 
-const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-});
-
-export default App;
+const styles = StyleSheet.create({});
